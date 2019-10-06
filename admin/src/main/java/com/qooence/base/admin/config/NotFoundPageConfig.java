@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
  * 解决方法2: 采用静态文件的形式让每个目录都存在就不会报错了
  * vue router hash 模式下不用注释(因为起不到作用)
  */
-@Component
+//@Component
 public class NotFoundPageConfig  implements WebServerFactoryCustomizer<ConfigurableServletWebServerFactory> {
 
     @Override

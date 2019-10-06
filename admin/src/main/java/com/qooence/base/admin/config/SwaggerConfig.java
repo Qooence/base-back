@@ -46,10 +46,10 @@ public class SwaggerConfig implements WebMvcConfigurer {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-            .title("家庭医生")
-            .description("家庭医生文档")
+            .title("智慧家居")
+            .description("智慧家居文档")
             .termsOfServiceUrl("http://www.baidu.com")
-            .version("2.0.0")
+            .version("1.0.0")
             .build();
     }
 
