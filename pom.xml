@@ -35,7 +35,7 @@
         <commons.codec.version>1.10</commons.codec.version>
         <commons.configuration.version>1.10</commons.configuration.version>
         <shiro.version>1.4.0</shiro.version>
-        <jwt.version>0.7.0</jwt.version>
+        <jwt.version>0.9.0</jwt.version>
         <kaptcha.version>0.0.9</kaptcha.version>
         <qiniu.version>[7.2.0, 7.2.99]</qiniu.version>
         <aliyun.oss.version>2.8.3</aliyun.oss.version>
@@ -43,7 +43,7 @@
         <swagger.version>2.7.0</swagger.version>
         <joda.time.version>2.9.9</joda.time.version>
         <fastjson.version>1.2.47</fastjson.version>
-        <hutool.version>[4.1.12,)</hutool.version>
+        <hutool.version>4.6.1</hutool.version>
 
         <!--wagon plugin 配置 自动化部署-->
         <service-path>/work/doctor</service-path>
