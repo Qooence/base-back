@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.qooence.base.admin.modules.sys.dao.SysRoleRouteDao">
+
+    <delete id="deleteBatch">
+        delete from sys_role_route where role_id in
+        <foreach item="roleId" collection="array" open="(" separator="," close=")">
+            #{roleId}
+        </foreach>
+    </delete>
+
+    <delete id="deleteBatchRoute">
+        delete from sys_role_route where route_id in
+        <foreach item="routeId" collection="array" open="(" separator="," close=")">
+            #{routeId}
+        </foreach>
+    </delete>
+
+    <select id="queryRouteIdList" resultType="long">
+        select route_id from sys_role_route where role_id = #{value}
+    </select>
+
+</mapper>

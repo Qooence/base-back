@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.qooence.base.admin.modules.sys.dao.SysRoleDao">
+	
+	<!-- 查询用户创建的角色ID列表 -->
+	<select id="queryRoleIdList" resultType="long">
+		select role_id from sys_role where create_user_id = #{createUserId} 
+	</select>
+
+	<select id="queryRoleNameByUserId" resultType="map">
+		SELECT GROUP_CONCAT(role_name) roleNames, GROUP_CONCAT(r.role_id) roleIds  FROM sys_role r,sys_user_role ur where r.role_id = ur.role_id and ur.user_id = #{userId};
+	</select>
+
+	<select id="queryRoleByRouteIds" resultType="com.qooence.base.admin.modules.sys.entity.SysRoleEntity">
+		SELECT
+		DISTINCT r.*
+		from
+		sys_role_route srr LEFT JOIN sys_role r ON srr.role_id = r.role_id
+		where
+		srr.route_id in
+		<foreach item="routeId" collection="array" open="(" separator="," close=")">
+			#{routeId}
+		</foreach>
+	</select>
+</mapper>
